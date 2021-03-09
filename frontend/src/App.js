@@ -2,7 +2,6 @@ import React from 'react';
 import { observer } from 'mobx-react';
 import UserStore from './stores/UserStore';
 import LoginForm from './LoginForm';
-import InputField from './InputField';
 import SubmitButton from './SubmitButton';
 import './App.css';
 
@@ -18,7 +17,7 @@ class App extends React.Component {
         headers:{
 // JSON과 이에 대한 콘텐츠 유형만 허용
           'Accept' : 'application/json',
-          'Content-type' : 'application/json'
+          'Content-Type' : 'application/json'
 
         }
       });
@@ -59,7 +58,7 @@ class App extends React.Component {
         headers:{
 // JSON과 이에 대한 콘텐츠 유형만 허용
           'Accept' : 'application/json',
-          'Content-type' : 'application/json'
+          'Content-Type' : 'application/json'
 
         }
       });
@@ -125,6 +124,8 @@ class App extends React.Component {
         return (
           <div className="app">
               <div className='container'>
+
+                  
                   <LoginForm />
                </div>
           </div>
