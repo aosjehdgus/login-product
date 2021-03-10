@@ -51,7 +51,20 @@ body, html, #root, .app, .container {
 }
 
 .inputField {
- padding-top: 16px;
+
+  display: grid;
+  grid-template-rows: 0.2fr 1fr;
+  row-gap: 5px;
+  padding-top: 10px;
+ 
+}
+
+
+.input_label{
+
+  color: #84898C;
+  font-size: 14px;
+ 
 }
 
 .input {
@@ -62,9 +75,11 @@ body, html, #root, .app, .container {
  color: #292929;
  width: 100%;
  padding: 12px;
- font-size: 14px;
+ font-size: 16px;
  background: rgba(255, 255, 255, 1);
 }
+
+
 
 .submitButton {
  padding-top: 16px;

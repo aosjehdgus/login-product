@@ -107,7 +107,7 @@ class App extends React.Component {
                   Welcome {UserStore.username}
                   <SubmitButton 
                   
-                    text = {'Log out'}
+                    text = {'로그아웃'}
                     diabled = {false}
                     onClick = { () => this.doLogout()}
                   

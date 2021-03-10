@@ -1,8 +1,8 @@
-import React        from 'react';
-import Head         from './Head';
-import InputField   from './InputField';
-import SubmitButton from './SubmitButton';
-import UserStore    from './stores/UserStore';
+import React          from 'react';
+import Head           from './Head';
+import InputField     from './InputField';
+import SubmitButton   from './SubmitButton';
+import UserStore      from './stores/UserStore';
 
 
 class LoginForm extends React.Component {
@@ -109,22 +109,35 @@ class LoginForm extends React.Component {
             title={this.state.head.title}
           
           />
+
+       
+
           <InputField 
+
+              label = '아이디'
               type = 'text'
-              placeholder = 'Username'
+              placeholder = '아이디'
               value = {this.state.username ? this.state.username : ''}
               onChange = { (val) => this.setInputValue('username', val) }
           />
 
           <InputField 
+
+              label = '비밀번호'
               type = 'password'
-              placeholder = 'Password'
+              placeholder = '비밀번호'
               value = {this.state.password ? this.state.password : ''}
               onChange = { (val) => this.setInputValue('password', val) }
           />
+          <SubmitButton 
+              text = '회원 가입'
+              disabled = {this.state.buttonDisabled}
+              onClick = { () => this.doLogin() }
+          
+          />
 
           <SubmitButton 
-              text = '로그인 버튼'
+              text = '로그인'
               disabled = {this.state.buttonDisabled}
               onClick = { () => this.doLogin() }
           
