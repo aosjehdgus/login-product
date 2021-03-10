@@ -3,15 +3,43 @@ body, html, #root, .app, .container {
   height: 100%;
 }
 
+* {
+  font-family: 'Nanum Gothic', sans-serif;
+}
+
+
 
 .container {
-  font-size: 28px;
-  color: #fff;
+
+  
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #282c34;
+  background-color: #f2f2f2;
+  
+}
+
+.head{
+
+  display: flex;
+  justify-content: center;
+  background-color: #A58D7F;
+  height: 100px;
+  border-radius: 12px;
+ 
+
+}
+
+.head h1{
+
+  display: flex;
+  font-size: 35px;
+  font-weight: 700;
+  color: #f6f0fc;
+  align-items: center;
+  text-transform: capitalize;
+
 }
 
 .loginForm {
@@ -29,7 +57,7 @@ body, html, #root, .app, .container {
 .input {
  box-sizing: border-box;
  outline: none;
- border: solid 2px #1189de;
+ border: solid 2px #84898C;
  border-radius: 4px;
  color: #292929;
  width: 100%;
@@ -46,12 +74,12 @@ body, html, #root, .app, .container {
 .btn {
  width: 100%;
  min-width: 280px;
- color: #565656;
+ color: #f6f0fc;
  padding: 12px;
- font-size: 14px;
+ font-size: 20px;
  font-weight: bold;
- border: solid 2px #1189de;
+ border: solid 2px #B5C7D3;
  border-radius: 4px;
- background: #fff;
+ background: #B5C7D3;
  cursor: pointer;
 }
