@@ -116,7 +116,7 @@ class LoginForm extends React.Component {
 
               label = '아이디'
               type = 'text'
-              placeholder = '아이디'
+              placeholder = 'ID'
               value = {this.state.username ? this.state.username : ''}
               onChange = { (val) => this.setInputValue('username', val) }
           />
@@ -125,7 +125,7 @@ class LoginForm extends React.Component {
 
               label = '비밀번호'
               type = 'password'
-              placeholder = '비밀번호'
+              placeholder = 'Password'
               value = {this.state.password ? this.state.password : ''}
               onChange = { (val) => this.setInputValue('password', val) }
           />
