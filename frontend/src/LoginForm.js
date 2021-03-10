@@ -1,4 +1,5 @@
 import React        from 'react';
+import Head         from './Head';
 import InputField   from './InputField';
 import SubmitButton from './SubmitButton';
 import UserStore    from './stores/UserStore';
@@ -10,6 +11,7 @@ class LoginForm extends React.Component {
     super(props);
     this.state = {
 
+      head : {title : "dongle's page"},
       username : '',
       password : '',
       buttonDisabled : false
@@ -103,7 +105,10 @@ class LoginForm extends React.Component {
 
     return (
       <div className="loginForm">
-          Log in
+          <Head 
+            title={this.state.head.title}
+          
+          />
           <InputField 
               type = 'text'
               placeholder = 'Username'
@@ -119,7 +124,7 @@ class LoginForm extends React.Component {
           />
 
           <SubmitButton 
-              text = 'Login'
+              text = '로그인 버튼'
               disabled = {this.state.buttonDisabled}
               onClick = { () => this.doLogin() }
           
