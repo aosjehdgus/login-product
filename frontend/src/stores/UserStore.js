@@ -1,19 +1,13 @@
 import { extendObservable } from 'mobx';
 
-/* User Store */
-
 class UserStore{
 
     constructor(){
-// store에 대한 속성 포함 
         extendObservable(this, {
-// login 양식이 로드 되는지 여부 확인하기 위해 loading 추가
+
             loading : true,
-// boolean(논리) 연산자를 통해서 login 여부 확인
             isLoggedIn : false,
-// username의 초기 상태는 비어있는 문자열로 지정 
-            username : ''
-            
+            username : ''          
 
         })
     }
@@ -21,6 +15,14 @@ class UserStore{
 
 export default new UserStore();
 
-/* 위의 데이터들을 포함하는 new 인스턴스 사용 */
+
+// User Store 
+
+// extendObservable은 store에 대한 속성을 포함한다. 
+// login 양식이 로드 되는지 여부 확인하기 위해 loading 추가한다.
+// isLoggedIn에서 논리 연산자를 통해 login 여부를 체크한다.
+// username의 초기 상태는 비어있는 문자열로 지정한다.
+
+// 위의 데이터들을 포함하는 new 인스턴스 사용 
 
     

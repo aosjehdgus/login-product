@@ -7,37 +7,39 @@ import './App.css';
 
 class App extends React.Component {
 
+// API 호출하기
+// application/json : JSON과 이에 대한 콘텐츠 유형만 허용
+// let result : res의 값을 json으로 받는다.
+// UserStore.loading = false; 더 이상 로드할 필요가 없다.
+// UserStore.isLoggedIn = true; login인 된 상태이기 때문에
+// UserStore.username = result.username;  
+
   async componentDidMount(){
-
     try{
+        let res = await fetch('/isLoggedIn',{
 
-      let res = await fetch('/isLoggedIn',{
+          method : 'post',
+          headers:{         
+            'Accept'       : 'application/json',
+            'Content-Type' : 'application/json'
+          } 
+        });
 
-        method : 'post',
-        headers:{
-// JSON과 이에 대한 콘텐츠 유형만 허용
-          'Accept' : 'application/json',
-          'Content-Type' : 'application/json'
+        let result = await res.json();
+
+        if (result && result.success){
+
+          UserStore.loading = false;
+          UserStore.isLoggedIn = true;
+          UserStore.username = result.username;  
 
         }
-      });
+        else{
+          UserStore.loading = false;
+          UserStore.isLoggedIn = false;
 
-      let result = await res.json();
-
-      if (result && result.success){
-        UserStore.loading = false;
-        UserStore.isLoggedIn = true;
-        UserStore.username = result.username;  
-      }
-      else{
-        UserStore.loading = false;
-        UserStore.isLoggedIn = false;
-
-      }
+        }
     }
-// loading이 되면 app component가 mount된다.
-// 사용자가 세션을 확인하여 로그인했는지 여부를 확인하고,
-
 
     catch(e){
 
@@ -48,6 +50,7 @@ class App extends React.Component {
 
   }
 
+//   
   async doLogout(){
 
     try{
@@ -86,7 +89,7 @@ class App extends React.Component {
 
         <div className="app">
            <div className='container'>
-              Loading, Pleae wait..
+              로딩 중입니다. 잠시만 기다려주세요.
 
            </div>
         </div>
@@ -108,11 +111,11 @@ class App extends React.Component {
                   <SubmitButton 
                   
                     text = {'로그아웃'}
-                    diabled = {false}
+                    disabled = {false}
                     onClick = { () => this.doLogout()}
                   
                   />               
-
+ 
                </div>
             </div>
     
