@@ -38,10 +38,8 @@ db.connect(function(err){
 const sessionStore = new MySQLStore({
     expiration : (1825 * 86400 * 1000),
     endConnectionOnClose : false
-// endConnectionOnClose -> 저장소가 닫힐 때 DB 연결을 종료하려면 
-}, db);
 
-// sessionStore를 사용할 session 만들기
+}, db);
 
 app.use(session({
     key: '23043sldkfsdlkfsdkf',
